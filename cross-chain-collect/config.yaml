@@ -1,0 +1,79 @@
+Database:
+  CrosschainDataSource: postgres://cross_chain:cross_chain_blocksec666@192.168.3.155:8888/cross_chain?sslmode=disable
+Proxy: http://192.168.3.59:10809
+ChainbaseApiKey: 2FtLTBTxc9h7CX3YwBeEkrMlnhc
+ChainProviders:
+  eth:
+    Node: http://192.168.0.52:8545
+    ScanUrl: https://api.etherscan.io/
+    ApiKeys: 
+      - ZECFHPQ1EHP4D4YZ25Y9VDUFUG9XQ7KFIW
+      - 3NZ5DAEKAH1VEQD7X984JMKXM2FTB7X8KH
+      - 3PUEXMF26Z8FC11QWX92RJSSXGV326V6TS
+      - 9KZVC33ZPHE2CTD34WUPZZCEZRJJMGU26K
+    ChainbaseTable: ethereum
+    EnableTraceCall: true
+  bsc:
+    Node: https://rpc.ankr.com/bsc
+    ScanUrl: https://api.bscscan.com/
+    ApiKeys:
+      - 7VH9MSPYJ7AZGTCEBF6BQSEVQ7KHECX7X1
+      - 9W7T4UJ9B73XINMZJXJ8YY5ZF224CUK7PF
+      - BA1V55GGFKE2IPF1BRKE5AR8C3TFVHMV93
+      - BBYPSFSGHIKEIDNBHUMAB2JTI3C1JYZHSF
+    ChainbaseTable: bsc
+    EnableTraceCall: true
+  polygon:
+    Node: https://rpc.ankr.com/polygon
+    ScanUrl: https://api.polygonscan.com/
+    ApiKeys:
+      - W2D5TC91K7SJUC7GXE8Z8QIG2IWT8MBUX4
+      - MW1TW2E4WQ81RFXRWJIZ1NTDVXEHBRRBYV
+      - QQZQRCIQDGARCHZW72R1SY2NXYMVS4YX2U
+      - Q7S6T7FAAC35JXIGJQKX4RPCTSQMY9HDPH
+    ChainbaseTable: polygon
+    EnableTraceCall: true
+  avalanche:
+    Node: https://rpc.ankr.com/avalanche
+    ScanUrl: https://api.snowtrace.io/
+    ApiKeys:
+      - V1CU4MRJEIB1ZV65EMXCD122YJGIDUA1QE
+      - ZRPGDGVPUPS6X658CAY8FDXYI4Y5IQ4ZTU
+      - NBF4537AXIHHEIKIQPAK8MTRXAIS65KSD4
+      - HTS96V16FDG1PEIZ1FQ7K2HQ6UJF4TYQ4A
+    ChainbaseTable: avalanche
+  fantom:
+    Node: https://rpc.ankr.com/fantom
+    ScanUrl: https://api.ftmscan.com/
+    ApiKeys:
+      - UBHUD7V8726DCXJWTH3KCGKK3Y8FBQNN7H
+      - CE38GX3I83S6QVCGKW8MDI56UA4WTUBN58
+      - UB1ZQ1W11R2SVG9GT47K5U9VD7T8RES41G
+      - 21FM58SDHD53DMKC27GJ3124KI8MAMYXRE
+    ChainbaseTable: fantom
+  arbitrum:
+    Node: https://rpc.ankr.com/arbitrum
+    ScanUrl: https://api.arbiscan.io/
+    ApiKeys:
+      - EMEXUYMJTKJX2R84F8ZDS2A1HFY8H9G4SP
+      - XKC4XM3S1GMNQXZ1ZAVXRVK1UQ8G551EG1
+      - G86QRQJ2HRK99K2KVEZZQH389594NKSQUR
+      - IR253SMD1KPGSEAPBYNN7Y5YFMFFDXYWFH
+    ChainbaseTable: arbitrum
+  optimism:
+    Node: https://rpc.ankr.com/optimism
+    ScanUrl: https://api-optimistic.etherscan.io/
+    ApiKeys:
+      - P61F35FJCJFIFD573XP3P4IN5DGDRW8PM6
+      - ZR5P1ZQ6W7A276WINUI2QVF47CFT9E7ABJ
+      - S4JIQHYNGHR8MZAGAPRVC4B1HNIXVF11QM
+      - DRY55232EXCZRGHT5HIF7PSJ12Y2S2GRHZ
+    ChainbaseTable: optimism
+  # cronos:
+  #   Node: https://rpc.ankr.com/optimism
+  #   ScanUrl: https://api.cronoscan.com/
+  #   ApiKeys:
+  #     - 8VMS2165M1EDPAYCKJDF652V6EX4ZZQ7FX
+  #     - I191ERD7C8NKMM38Y8H2ZD7FK46JH1NFRC
+  #     - XQUYFJC4C4ZMTRYP3F6YH5TTFBKTPCK7U9
+  #     - PCE1SYQV24FZAFKTY79TUTX1I5ZIF1HTSI
