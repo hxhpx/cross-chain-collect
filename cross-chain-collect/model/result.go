@@ -30,9 +30,10 @@ type Result struct {
 type Results []*Result
 
 type Data struct {
-	Id              int64         `db:"id"`
+	Id              uint64        `db:"id"`
 	MatchId         sql.NullInt64 `db:"match_id"`
 	Chain           string        `db:"chain"`
+	Time            string        `db:"ts"`
 	Number          uint64        `db:"number"`
 	Index           uint64        `db:"index"`
 	Hash            string        `db:"hash"`
@@ -57,6 +58,7 @@ type Data_ struct {
 	Id              int64         `db:"id"`
 	MatchId         sql.NullInt64 `db:"match_id"`
 	Chain           string        `db:"chain"`
+	Time            string        `db:"ts"`
 	Number          uint64        `db:"block_number"`
 	Index           uint64        `db:"tx_index"`
 	Hash            string        `db:"tx_hash"`
