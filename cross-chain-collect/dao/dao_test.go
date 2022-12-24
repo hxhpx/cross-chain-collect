@@ -5,10 +5,13 @@ import (
 	"app/model"
 	"encoding/json"
 	"fmt"
+	"gitee.com/dtapps/go-ssh-tunnel/dssh"
 	"testing"
 )
 
 func TestDao(t *testing.T) {
+
+	dssh.Tunnel("root", "", ":22", ":3306", "localhost:13306")
 	d := NewDao("postgres://cross_chain:cross_chain_blocksec666@192.168.3.155:8888/cross_chain?sslmode=disable")
 	var f *uint64
 

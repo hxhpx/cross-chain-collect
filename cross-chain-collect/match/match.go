@@ -86,6 +86,7 @@ func (a *Match) BatchMatch_(d *dao.Dao, matched_pair *[]MatchedId, start, batch_
 	return err
 }
 
+// Anyswap, Synapse, CBridge, WormHole
 func (a *Match) GetMatchedPair(d *dao.Dao, project_name string) (*[]MatchedId, error) {
 	res := &[]MatchedId{}
 
@@ -124,11 +125,13 @@ func (a *Match) BatchMatch(d *dao.Dao, matched_pair *[]MatchedId, start, batch_s
 	return err
 }
 
-func (a *Match) GetMatchedPair_(d *dao.Dao) (*[]MatchedId, error) {
+func (a *Match) GetMatchedStargate(d *dao.Dao) (*[]MatchedId, error) {
 	res := &[]MatchedId{}
 
-	stmt := "select a.internal_id as dest_id, a2.internal_id as src_id from anyswap_v4 a inner join anyswap_v4 a2 on a.src_tx_hash = a2.tx_hash and a.direction='In' and a2.direction='Out' and a.match_id is null and a2.match_id is null " +
-		"and a.to_address = a2.to_address and a.to_chain = a2.to_chain"
+	stmt := "with t as (select * from " + d.DBname() + " where project = 'Stargate' and match_id is null)" +
+		" select t1.id as dest_id, t2.id as src_id from t t1 inner join t t2 " +
+		"on t1.match_tag = t2.match_tag and t1.to_chain_id = t2.to_chain_id " +
+		"and t1.from_chain_id = t2.from_chain_id and t1.direction='in' and t2.direction='out'"
 	err := d.DB().Select(&(*res), stmt)
 
 	fmt.Println(len(*res))

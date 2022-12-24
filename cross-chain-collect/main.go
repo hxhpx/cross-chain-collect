@@ -86,6 +86,7 @@ func f(d *dao.Dao, t *[]match.MatchedId, start, batch_size int) {
 		}
 	}
 	println("already: ", start+batch_size)
+
 }
 
 func main() {
